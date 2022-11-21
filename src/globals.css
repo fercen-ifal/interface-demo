@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-text-size-adjust: 100%;
+}
+
+body {
+	@apply bg-primary-main;
+}
+
+#app {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+
+	font-family: "Poppins", sans-serif;
+}
+
+main {
+	height: 100%;
+}

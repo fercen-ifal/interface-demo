@@ -1,0 +1,36 @@
+{
+	"name": "interface-demo",
+	"description": "Demonstração da interface do aplicativo web da FERCEN.",
+	"version": "0.1.0",
+	"author": "FERCEN <jpnm1@aluno.ifal.edu.br>",
+	"license": "GPL-3.0",
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "vite build",
+		"preview": "vite preview",
+		"check": "svelte-check --tsconfig ./tsconfig.json",
+		"format": "prettier . --write"
+	},
+	"devDependencies": {
+		"@sveltejs/vite-plugin-svelte": "^1.1.0",
+		"@trivago/prettier-plugin-sort-imports": "^3.4.0",
+		"@tsconfig/svelte": "^3.0.0",
+		"autoprefixer": "^10.4.7",
+		"postcss": "^8.4.14",
+		"postcss-load-config": "^4.0.1",
+		"prettier": "^2.7.1",
+		"prettier-plugin-svelte": "^2.8.1",
+		"svelte": "^3.52.0",
+		"svelte-check": "^2.9.2",
+		"svelte-preprocess": "^4.10.7",
+		"svelthree": "^0.119.0-5",
+		"tailwindcss": "^3.1.5",
+		"tslib": "^2.4.0",
+		"typescript": "^4.6.4",
+		"vite": "^3.2.3"
+	},
+	"dependencies": {
+		"svelte-routing": "^1.6.0"
+	}
+}

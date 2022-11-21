@@ -1,0 +1,7 @@
+.vscode/*
+!.vscode/extensions.json
+node_modules
+dist
+dist-ssr
+
+package-lock.json
