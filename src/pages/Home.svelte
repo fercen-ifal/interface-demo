@@ -7,45 +7,48 @@
 		AmbientLight,
 		SphereBufferGeometry,
 		Mesh,
-		MeshStandardMaterial,
 		WebGLRenderer,
+		MeshPhongMaterial,
+		TextureLoader,
+		Color,
 	} from "svelthree";
 
-	let cubeGeometry = new SphereBufferGeometry(1, 10, 20);
-	let cubeMaterial = new MeshStandardMaterial();
+	const textureLoader = new TextureLoader();
+	const geometry = new SphereBufferGeometry(1, 32, 32);
+	const material = new MeshPhongMaterial({
+		map: textureLoader.load("/material/terra.jpg"),
+		bumpMap: textureLoader.load("/material/terra-bump.jpg"),
+		specularMap: textureLoader.load("/material/terra-spec.jpg"),
+		specular: new Color("grey"),
+	});
 
-	const rotateCube = obj => {
-		let rAF = 0;
+	function rotateEarth(obj) {
 		let doRotate = false;
+		let animationFrame = 0;
 
 		function onStart() {
-			startRotating();
-		}
-
-		function startRotating() {
 			doRotate = true;
-			rAF = requestAnimationFrame(rotate);
-		}
-
-		function rotate() {
-			if (doRotate) {
-				obj.rotation.x += 0.01;
-				obj.rotation.y += 0.01;
-				obj.rotation.z += 0.01;
-				rAF = requestAnimationFrame(rotate);
-			}
+			animationFrame = requestAnimationFrame(rotate);
 		}
 
 		function onDestroy() {
 			doRotate = false;
-			cancelAnimationFrame(rAF);
+			cancelAnimationFrame(animationFrame);
+		}
+
+		function rotate() {
+			if (!doRotate) return;
+			obj.rotation.x += 0.008;
+			obj.rotation.y += 0.006;
+			obj.rotation.z += 0.005;
+			animationFrame = requestAnimationFrame(rotate);
 		}
 
 		return {
 			onStart: onStart,
 			onDestroy: onDestroy,
 		};
-	};
+	}
 </script>
 
 <div class="static sm:relative sm:flex-grow sm:h-full">
@@ -63,27 +66,26 @@
 					</h2>
 				</div>
 				<div>
-					<Canvas let:sti w={350} h={350} interactive>
+					<Canvas let:sti w={350} h={350} interactive class="outline-none cursor-default">
 						<Scene {sti} let:scene id="scene1" props={{ background: 0x9fe3ba }}>
 							<PerspectiveCamera {scene} id="cam1" pos={[0, 0, 3]} lookAt={[0, 0, 0]} />
-							<AmbientLight {scene} intensity={1.25} />
-							<DirectionalLight {scene} pos={[3, 3, 3]} />
+							<AmbientLight {scene} intensity={1.1} />
+							<DirectionalLight {scene} pos={[-2, 2, 2]} intensity={0.2} />
 
 							<Mesh
 								{scene}
-								geometry={cubeGeometry}
-								material={cubeMaterial}
-								mat={{ roughness: 0.5, metalness: 0.5, color: 0xff3e00 }}
+								{geometry}
+								{material}
+								mat={{ roughness: 0.5, metalness: 0.5 }}
 								pos={[0, 0, 0]}
-								scale={[1, 1, 1]}
-								animation={rotateCube}
-								interact
+								rot={[0, 0, 0]}
 								on:pointermove={event => {
 									let obj = event.detail.target;
-									obj.rotation.x += 0.01;
-									obj.rotation.y += 0.01;
-									obj.rotation.z += 0.01;
+									obj.rotation.x += 0.005;
+									obj.rotation.y += 0.005;
 								}}
+								interact
+								animation={rotateEarth}
 								aniauto />
 						</Scene>
 

@@ -1,7 +1,7 @@
 {
 	"name": "interface-demo",
 	"description": "Demonstração da interface do aplicativo web da FERCEN.",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"author": "FERCEN <jpnm1@aluno.ifal.edu.br>",
 	"license": "GPL-3.0",
 	"type": "module",
