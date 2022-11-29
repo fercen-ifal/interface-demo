@@ -9,6 +9,10 @@ module.exports = {
 					dark: "#2DCE8A",
 					darker: "#1EB575",
 				},
+				alt: {
+					googleRed: "#DB4C3F",
+					microsoftBlue: "#2C75E9",
+				},
 			},
 		},
 	},
