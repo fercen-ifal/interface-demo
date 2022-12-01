@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { Link } from "svelte-routing";
+
 	import TextField from "../lib/input/TextField.svelte";
 </script>
 
@@ -8,13 +10,16 @@
 
 <main
 	class="flex flex-col lg:flex-row justify-center lg:justify-between items-center px-10 lg:px-20 pt-32 gap-32 bg-primary-main">
-	<section class="h-full">
-		<h1 class="font-semibold text-3xl sm:text-5xl sm:leading-normal mb-2">
-			Acesse o sistema de <br /> administração:
-		</h1>
-		<h2 class="sm:text-xl sm:leading-normal">
-			Utilize suas credenciais para acessar o sistema <br /> de administração da Ferramenta de Controle Energético.
-		</h2>
+	<section class="flex flex-col gap-20 h-full">
+		<div>
+			<h1 class="font-semibold text-3xl sm:text-5xl sm:leading-normal mb-2">
+				Acesse o sistema de <br /> administração:
+			</h1>
+			<h2 class="sm:text-xl sm:leading-normal">
+				Utilize suas credenciais para acessar o sistema <br /> de administração da Ferramenta de Controle Energético.
+			</h2>
+		</div>
+		<img src="/login.svg" alt="Ilustração indicando área de login." class="hidden lg:block w-full max-w-lg" />
 	</section>
 	<section
 		class="flex flex-col gap-5 w-full max-w-xl h-full px-8 py-14 bg-white shadow-md rounded-tl-[30px] rounded-tr-[30px]">
@@ -25,10 +30,8 @@
 				<TextField id="password" type="password" placeholder="Senha:" />
 			</div>
 			<div class="flex justify-between w-full text-xs text-primary-dark">
-				<!-- svelte-ignore a11y-invalid-attribute -->
-				<a href="#" class="hover:underline">Esqueceu seu usuário?</a>
-				<!-- svelte-ignore a11y-invalid-attribute -->
-				<a href="#" class="hover:underline">Esqueceu sua senha?</a>
+				<Link to="#" class="hover:underline">Esqueceu seu usuário?</Link>
+				<Link to="#" class="hover:underline">Esqueceu sua senha?</Link>
 			</div>
 			<button
 				type="submit"
