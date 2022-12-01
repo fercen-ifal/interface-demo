@@ -1,6 +1,4 @@
 <script lang="ts">
-	import { Link } from "svelte-routing";
-
 	import TextField from "../lib/input/TextField.svelte";
 </script>
 
@@ -30,8 +28,10 @@
 				<TextField id="password" type="password" placeholder="Senha:" />
 			</div>
 			<div class="flex justify-between w-full text-xs text-primary-dark">
-				<Link to="#" class="hover:underline">Esqueceu seu usuário?</Link>
-				<Link to="#" class="hover:underline">Esqueceu sua senha?</Link>
+				<!-- svelte-ignore a11y-invalid-attribute -->
+				<a href="#" class="hover:underline">Esqueceu seu usuário?</a>
+				<!-- svelte-ignore a11y-invalid-attribute -->
+				<a href="#" class="hover:underline">Esqueceu sua senha?</a>
 			</div>
 			<button
 				type="submit"

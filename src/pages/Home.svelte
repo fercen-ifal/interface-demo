@@ -1,5 +1,4 @@
 <script>
-	import { Link } from "svelte-routing";
 	import {
 		Canvas,
 		Scene,
@@ -96,12 +95,12 @@
 			Esta ferramenta torna público os dados de <br /> consumo de energia do IFAL, consulte agora:
 		</h2>
 		<div class="flex flex-col gap-2">
-			<Link to="/dados" class="rounded-sm px-6 py-1 bg-primary-dark text-white text-xl text-center">
+			<a href="/dados" class="rounded-sm px-6 py-1 bg-primary-dark text-white text-xl text-center">
 				Veja os dados
-			</Link>
-			<Link to="/contato" class="rounded-sm px-6 py-1 bg-gray-500 text-white text-xl text-center">
+			</a>
+			<a href="/contato" class="rounded-sm px-6 py-1 bg-gray-500 text-white text-xl text-center">
 				Fale conosco
-			</Link>
+			</a>
 		</div>
 	</section>
 </main>
