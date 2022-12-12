@@ -5,7 +5,7 @@
 </script>
 
 <svelte:head>
-	<title>Faça login | FERCEN</title>
+	<title>Crie sua conta | FERCEN</title>
 </svelte:head>
 
 <main
@@ -16,7 +16,8 @@
 				Acesse o sistema de <br /> administração:
 			</h1>
 			<h2 class="sm:text-xl sm:leading-normal">
-				Utilize suas credenciais para acessar o sistema <br /> de administração da Ferramenta de Controle Energético.
+				Crie seu usuário para acessar o sistema de <br /> administração da Ferramenta de Controle
+				<br /> Energético.
 			</h2>
 		</div>
 	</section>
@@ -26,33 +27,23 @@
 		<form class="flex flex-col gap-3" on:submit|preventDefault={() => {}}>
 			<div class="flex flex-col gap-4">
 				<TextField id="username" placeholder="Usuário:" />
+				<TextField id="email" type="email" placeholder="Email:" />
 				<TextField id="password" type="password" placeholder="Senha:" />
+				<TextField id="invite" placeholder="Seu convite:" />
 			</div>
 			<div class="flex justify-between w-full text-xs text-primary-dark">
-				<Link to="/cadastro" class="hover:underline">Criar um novo usuário</Link>
-				<Link to="#" class="hover:underline">Esqueceu sua senha?</Link>
+				<Link to="/entrar" class="hover:underline">Já possui uma conta?</Link>
 			</div>
 			<button
 				type="submit"
 				class="bg-primary-dark text-white px-2 py-1.5 rounded-sm outline-primary-darker duration-200 hover:brightness-95 active:brightness-90">
-				Entrar
+				Cadastrar
 			</button>
 		</form>
 		<div class="flex flex-col gap-4 mt-4">
 			<span class="text-sm">
-				Se você sincronizou sua conta com Google e/ou Microsoft, pode utilizar algum agora para fazer login de
-				forma mais rápida.
+				No campo “Seu convite” insira o código que foi destinado ao seu usuário para seu registro ser permitido.
 			</span>
-			<div class="flex flex-col sm:flex-row justify-between gap-3">
-				<button
-					class="w-full px-2 py-1.5 bg-alt-googleRed text-white rounded-sm duration-200 hover:brightness-95 active:brightness-90">
-					Entre com Google
-				</button>
-				<button
-					class="w-full px-2 py-1.5 bg-alt-microsoftBlue text-white rounded-sm duration-200 hover:brightness-95 active:brightness-90">
-					Entre com Microsoft
-				</button>
-			</div>
 		</div>
 	</section>
 </main>
