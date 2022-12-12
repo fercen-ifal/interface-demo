@@ -23,7 +23,7 @@
 	</section>
 	<section
 		class="flex flex-col gap-5 w-full max-w-xl h-full px-8 py-14 bg-white shadow-md rounded-tl-[30px] rounded-tr-[30px]">
-		<h3 class="font-medium text-2xl">Faça login</h3>
+		<h3 class="font-medium text-2xl">Crie seu usuário</h3>
 		<form class="flex flex-col gap-3" on:submit|preventDefault={() => {}}>
 			<div class="flex flex-col gap-4">
 				<TextField id="username" placeholder="Usuário:" />
